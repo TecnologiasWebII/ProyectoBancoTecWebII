@@ -91,10 +91,10 @@ namespace ProyectoBancoTecWebII.Controllers
         {
             BancoDBEntities bd = new BancoDBEntities();
             //obtener todos los regstros del cliente directamente de la tabla BD
-            //List<Cliente> listaCliente = bd.Cliente.ToList();
+            List<Cliente> listaCliente = bd.Cliente.ToList();
 
             //Obtener todos los registros del cliente por medio de un procedimiento almacenado            
-            return Json(ObtenerClientes(), JsonRequestBehavior.AllowGet);
+            return Json(listaCliente, JsonRequestBehavior.AllowGet);
         }
     }
 
